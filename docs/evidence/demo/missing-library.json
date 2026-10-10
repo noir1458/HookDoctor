@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.3",
+  "status": "ERROR",
+  "request": {
+    "target_argv": [
+      "./fixtures/app_normal"
+    ],
+    "resolved_executable": "/workspace/fixtures/app_normal",
+    "hook_library": "/workspace/fixtures/absent-library.so",
+    "expected_symbol": "open",
+    "cwd": "/workspace"
+  },
+  "facts": [
+    {
+      "id": "fact-001",
+      "code": "LIBRARY_NOT_FOUND",
+      "status": "CONFIRMED",
+      "message": "Hook library not found: /workspace/fixtures/absent-library.so",
+      "evidence_ids": [
+        "ev-001"
+      ]
+    }
+  ],
+  "diagnoses": [],
+  "observations": {
+    "library_load": "NOT_RUN",
+    "invocation": "UNKNOWN",
+    "bindings": []
+  },
+  "run": {
+    "attempted": false,
+    "target_exit_code": null,
+    "timed_out": false,
+    "output_limited": false,
+    "trace_complete": false,
+    "stdout": "",
+    "stderr": "",
+    "loader_environment": null
+  },
+  "evidence": [
+    {
+      "id": "ev-001",
+      "source": "validation",
+      "summary": "Hook path does not exist: /workspace/fixtures/absent-library.so",
+      "raw_excerpt": ""
+    }
+  ],
+  "limitations": [
+    "Loader binding does not establish function invocation or this workload's actual failure cause; invocation is UNKNOWN",
+    "Loader stderr is not authenticated telemetry; target output can share or imitate it",
+    "Secure-execution detection is incomplete; child processes and unusual loader scopes are outside this MVP"
+  ],
+  "errors": [
+    {
+      "code": "INPUT_INVALID",
+      "message": "Missing input: /workspace/fixtures/absent-library.so"
+    }
+  ]
+}
