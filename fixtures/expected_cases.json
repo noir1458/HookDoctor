@@ -1,0 +1,10 @@
+[
+  {"name":"normal", "argv":["./fixtures/app_normal"], "lib":"libhook_open.so", "symbol":"open", "stdout":"target: success\n", "marker":"open", "fact":"EXPECTED_BINDING_OBSERVED", "mismatch":false},
+  {"name":"large", "argv":["./fixtures/app_large"], "lib":"libhook_open.so", "symbol":"open", "stdout":"target: success\n", "marker":null, "fact":null, "mismatch":true},
+  {"name":"fixed", "argv":["./fixtures/app_large"], "lib":"libhook_fixed.so", "symbol":"open64", "stdout":"target: success\n", "marker":"open64", "fact":"EXPECTED_BINDING_OBSERVED", "mismatch":false},
+  {"name":"eager_call", "argv":["./fixtures/app_conditional_now","--call"], "lib":"libhook_open.so", "symbol":"open", "stdout":"target: called\n", "marker":null, "fact":null, "mismatch":true},
+  {"name":"eager_skip", "argv":["./fixtures/app_conditional_now","--skip"], "lib":"libhook_open.so", "symbol":"open", "stdout":"target: skipped\n", "marker":null, "fact":null, "mismatch":true},
+  {"name":"eager_skip_fixed", "argv":["./fixtures/app_conditional_now","--skip"], "lib":"libhook_fixed.so", "symbol":"open64", "stdout":"target: skipped\n", "marker":null, "fact":"EXPECTED_BINDING_OBSERVED", "mismatch":false},
+  {"name":"eager_call_fixed", "argv":["./fixtures/app_conditional_now","--call"], "lib":"libhook_fixed.so", "symbol":"open64", "stdout":"target: called\n", "marker":"open64", "fact":"EXPECTED_BINDING_OBSERVED", "mismatch":false},
+  {"name":"no_export", "argv":["./fixtures/app_normal"], "lib":"libhook_no_export.so", "symbol":"open", "stdout":"target: success\n", "marker":null, "fact":"SYMBOL_NOT_EXPORTED", "mismatch":false}
+]
