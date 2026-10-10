@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hookdoctor"
+version = "0.3.0"
+description = "Evidence-led Linux glibc LD_PRELOAD investigation"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+hookdoc = "hookdoctor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
