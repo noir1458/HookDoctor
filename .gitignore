@@ -1,0 +1,12 @@
+__pycache__/
+.DS_Store
+*.pyc
+.venv/
+*.egg-info/
+build/
+dist/
+fixtures/app_normal
+fixtures/app_large
+fixtures/app_conditional_now
+fixtures/app_static
+fixtures/*.so
