@@ -1,0 +1,73 @@
+{
+  "tested_commit": "576de8f37f15f6a16f58add63a0a06311fb2bb15",
+  "source_repository": "/Users/noir1458/git/capstone/HookDoctor",
+  "checkout": "/private/tmp/hookdoctor-repro-l8w8w3ev/checkout",
+  "run_directory": "/private/tmp/hookdoctor-repro-l8w8w3ev",
+  "clean_before": true,
+  "build_artifacts_absent_before": true,
+  "clone_command": [
+    "git",
+    "clone",
+    "--no-local",
+    "--no-hardlinks",
+    "/Users/noir1458/git/capstone/HookDoctor",
+    "/private/tmp/hookdoctor-repro-l8w8w3ev/checkout"
+  ],
+  "date": "2026-10-10",
+  "timezone": "Asia/Seoul",
+  "result": "PASS",
+  "build_exit_code": 0,
+  "verification_exit_code": 0,
+  "source_hashes_verified": true,
+  "modified_paths_after": [
+    "docs/evidence/acceptance/demo.txt",
+    "docs/evidence/acceptance/tests.txt",
+    "docs/evidence/demo/summary.json",
+    "docs/evidence/fixture-gate/fixture-records.json",
+    "docs/evidence/fixture-gate/tests.txt"
+  ],
+  "build_command": [
+    "bash",
+    "scripts/dev.sh",
+    "build"
+  ],
+  "verification_command": [
+    "bash",
+    "scripts/dev.sh",
+    "bash",
+    "scripts/verify.sh"
+  ],
+  "image": "hookdoctor-dev:ubuntu24.04-amd64",
+  "image_id": "sha256:727fd268e984fe05563b502829901cc502a06ecd19c1862cee376c7e0f30fe00",
+  "image_config_digest": "sha256:35c8515ea64b924947f44805e47d7e101c51faeaa35de98057d244e9a0319757",
+  "image_build_used_cache": true,
+  "platform": "linux/amd64",
+  "host": "Darwin arm64",
+  "docker_client_version": "29.8.0",
+  "docker_server_version": "29.8.0",
+  "toolchain": {
+    "uname -a": "Linux 94194931279e 7.0.12-linuxkit #1 SMP PREEMPT Thu Aug 27 14:02:21 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux\n",
+    "python3 --version": "Python 3.12.3\n",
+    "cc --version": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "getconf GNU_LIBC_VERSION": "glibc 2.39\n",
+    "readelf --version": "GNU readelf (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+    "nm --version": "GNU nm (GNU Binutils for Ubuntu) 2.42\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+    "cat /etc/os-release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+    "id": "uid=501 gid=20(dialout) groups=20(dialout)\n"
+  },
+  "fixture_test_summary": [
+    "----------------------------------------------------------------------",
+    "Ran 3 tests in 3.367s",
+    "",
+    "OK"
+  ],
+  "test_summary": [
+    "----------------------------------------------------------------------",
+    "Ran 40 tests in 20.524s",
+    "",
+    "OK"
+  ],
+  "demo_elapsed_seconds": 3.34,
+  "native_x86_64_cross_validation": "NOT_RUN",
+  "secondary": "verified conventional static ELF (compiler support available); no-export case also passed"
+}

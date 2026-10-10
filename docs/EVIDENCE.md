@@ -235,3 +235,60 @@ universal interception, a measured detection accuracy of 100%, or validation on
 arbitrary real-world projects. Native x86-64 Linux cross-validation remains **NOT
 RUN** until executed on actual Intel/AMD hardware. Course acceptance and the
 presentation itself remain separate milestones.
+
+## Frozen commit and clean-checkout reproduction
+
+**REPRODUCED_LOCAL, 2026-10-10:** tested commit
+[`576de8f37f15f6a16f58add63a0a06311fb2bb15`](https://github.com/CAU-2026-2-capstone-5-team-8/HookDoctor/commit/576de8f37f15f6a16f58add63a0a06311fb2bb15).
+The initial implementation was organized into six commits by responsibility:
+contract/environment, bounded fixture reproduction, ELF/model, runtime CLI,
+acceptance tests/demo, and documentation. These commits package the implementation
+at this checkpoint; their order does not represent separate historical development sessions.
+
+An independent local clone was created using only committed Git contents:
+
+```bash
+git clone --no-local --no-hardlinks \
+  /Users/noir1458/git/capstone/HookDoctor \
+  /private/tmp/hookdoctor-repro-l8w8w3ev/checkout
+cd /private/tmp/hookdoctor-repro-l8w8w3ev/checkout
+bash scripts/dev.sh build
+bash scripts/dev.sh bash scripts/verify.sh
+```
+
+Before execution, HEAD matched the commit above, the checkout was clean, all seven
+generated ELF artifacts were absent and there was no Python bytecode cache. The
+original working folder was not mounted into the test container. Source snapshot
+hashes matched after verification; only generated evidence files changed.
+
+Both commands exited **0**. The fixture gate passed **3 tests**, the full suite
+passed **40 tests in 20.524 s**, with **0 failed and 0 skipped**. The demo passed in
+**3.340 s**, selected the verified static secondary case, also passed no-export,
+and retained the same app_large SHA-256 before/after the hook repair.
+
+Environment: Darwin arm64 host; Docker client/server 29.8.0; Ubuntu 24.04.5
+linux/amd64 container; Python 3.12.3; GCC 13.3.0; glibc 2.39; binutils 2.42;
+uid=501/gid=20; runtime networking disabled. The committed Dockerfile built
+successfully **using the existing Docker layer cache**. This proves a fresh source
+checkout builds/runs with the available toolchain; it is not a fresh-machine,
+cache-free package installation or a native x86-64 cross-validation.
+
+Image used:
+`sha256:727fd268e984fe05563b502829901cc502a06ecd19c1862cee376c7e0f30fe00`.
+Its config digest is
+`sha256:35c8515ea64b924947f44805e47d7e101c51faeaa35de98057d244e9a0319757`;
+the rebuild changed the attestation/manifest-list identity, while the layers were cached.
+
+Immutable checkpoint records:
+
+- [Commit, clean-state checks, exact commands, image and toolchain](evidence/reproduction/576de8f/metadata.json)
+- [Image build log](evidence/reproduction/576de8f/build.txt)
+- [Whole verification output](evidence/reproduction/576de8f/verify.txt)
+- [Unittest output](evidence/reproduction/576de8f/acceptance/tests.txt)
+- [Fixture build commands and raw ELF/loader evidence](evidence/reproduction/576de8f/fixture-gate/fixture-records.json)
+- [Demo summary and unchanged binary hash](evidence/reproduction/576de8f/demo/summary.json)
+- [Exact CLI commands and raw reports](evidence/reproduction/576de8f/demo/commands.json)
+
+The subsequent documentation/evidence commit records this tested revision; it does
+not change the frozen implementation. Native Intel/AMD Linux cross-validation is
+still **NOT RUN**, and independent real-project accuracy evaluation remains future work.

@@ -1,0 +1,11 @@
+PASS normal: INCONCLUSIVE; harness marker=open; CLI invocation=UNKNOWN
+PASS large: INCONCLUSIVE; harness marker=None; CLI invocation=UNKNOWN
+PASS fixed: INCONCLUSIVE; harness marker=open64; CLI invocation=UNKNOWN
+PASS eager_call: INCONCLUSIVE; harness marker=None; CLI invocation=UNKNOWN
+PASS eager_skip: INCONCLUSIVE; harness marker=None; CLI invocation=UNKNOWN
+PASS eager_skip_fixed: INCONCLUSIVE; harness marker=None; CLI invocation=UNKNOWN
+PASS eager_call_fixed: INCONCLUSIVE; harness marker=open64; CLI invocation=UNKNOWN
+PASS no_export: INCONCLUSIVE; harness marker=None; CLI invocation=UNKNOWN
+PASS static: NOT_APPLICABLE; target not run
+PASS unchanged app_large SHA-256: e4d0f289e4634ec4aecf3e62082be1834fdeaae2cbcdcdc2c63d3208a9a6714d
+PASS demo completed in 3.340s. verified conventional static ELF (compiler support available); no-export case also passed

@@ -1,0 +1,333 @@
+{
+  "schema_version": "0.3",
+  "status": "INCONCLUSIVE",
+  "request": {
+    "target_argv": [
+      "./fixtures/app_conditional_now",
+      "--skip"
+    ],
+    "resolved_executable": "/workspace/fixtures/app_conditional_now",
+    "hook_library": "/workspace/fixtures/libhook_fixed.so",
+    "expected_symbol": "open64",
+    "cwd": "/workspace"
+  },
+  "facts": [
+    {
+      "id": "fact-001",
+      "code": "TARGET_IMPORTS_SYMBOL",
+      "status": "CONFIRMED",
+      "message": "Target imports open64@GLIBC_2.2.5",
+      "evidence_ids": [
+        "ev-004"
+      ]
+    },
+    {
+      "id": "fact-002",
+      "code": "HOOK_EXPORTS_SYMBOL",
+      "status": "CONFIRMED",
+      "message": "Hook /workspace/fixtures/libhook_fixed.so exports open64; base-name comparison alone does not establish version compatibility",
+      "evidence_ids": [
+        "ev-006",
+        "ev-007"
+      ]
+    },
+    {
+      "id": "fact-003",
+      "code": "LIBRARY_LOADED",
+      "status": "CONFIRMED",
+      "message": "Requested hook object was observed loaded: /workspace/fixtures/libhook_fixed.so",
+      "evidence_ids": [
+        "ev-013",
+        "ev-019"
+      ]
+    },
+    {
+      "id": "fact-004",
+      "code": "BINDING_OBSERVED",
+      "status": "CONFIRMED",
+      "message": "Direct target open64 version='GLIBC_2.2.5' resolves to /workspace/fixtures/libhook_fixed.so",
+      "evidence_ids": [
+        "ev-013"
+      ]
+    },
+    {
+      "id": "fact-005",
+      "code": "EXPECTED_BINDING_OBSERVED",
+      "status": "CONFIRMED",
+      "message": "Requested symbol bound to the hook: confirmed (symbol resolution only; invocation remains UNKNOWN)",
+      "evidence_ids": [
+        "ev-013"
+      ]
+    }
+  ],
+  "diagnoses": [],
+  "observations": {
+    "library_load": "OBSERVED",
+    "invocation": "UNKNOWN",
+    "bindings": [
+      {
+        "pid": 447,
+        "caller_object": "/workspace/fixtures/app_conditional_now",
+        "symbol": "__libc_start_main",
+        "symbol_version": "GLIBC_2.34",
+        "provider_object": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "evidence_ids": [
+          "ev-008"
+        ]
+      },
+      {
+        "pid": 447,
+        "caller_object": "/workspace/fixtures/app_conditional_now",
+        "symbol": "__cxa_finalize",
+        "symbol_version": "GLIBC_2.2.5",
+        "provider_object": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "evidence_ids": [
+          "ev-009"
+        ]
+      },
+      {
+        "pid": 447,
+        "caller_object": "/workspace/fixtures/app_conditional_now",
+        "symbol": "puts",
+        "symbol_version": "GLIBC_2.2.5",
+        "provider_object": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "evidence_ids": [
+          "ev-010"
+        ]
+      },
+      {
+        "pid": 447,
+        "caller_object": "/workspace/fixtures/app_conditional_now",
+        "symbol": "close",
+        "symbol_version": "GLIBC_2.2.5",
+        "provider_object": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "evidence_ids": [
+          "ev-011"
+        ]
+      },
+      {
+        "pid": 447,
+        "caller_object": "/workspace/fixtures/app_conditional_now",
+        "symbol": "strcmp",
+        "symbol_version": "GLIBC_2.2.5",
+        "provider_object": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "evidence_ids": [
+          "ev-012"
+        ]
+      },
+      {
+        "pid": 447,
+        "caller_object": "/workspace/fixtures/app_conditional_now",
+        "symbol": "open64",
+        "symbol_version": "GLIBC_2.2.5",
+        "provider_object": "/workspace/fixtures/libhook_fixed.so",
+        "evidence_ids": [
+          "ev-013"
+        ]
+      },
+      {
+        "pid": 447,
+        "caller_object": "/workspace/fixtures/app_conditional_now",
+        "symbol": "perror",
+        "symbol_version": "GLIBC_2.2.5",
+        "provider_object": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "evidence_ids": [
+          "ev-014"
+        ]
+      },
+      {
+        "pid": 447,
+        "caller_object": "/workspace/fixtures/app_conditional_now",
+        "symbol": "calloc",
+        "symbol_version": "GLIBC_2.2.5",
+        "provider_object": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "evidence_ids": [
+          "ev-015"
+        ]
+      },
+      {
+        "pid": 447,
+        "caller_object": "/workspace/fixtures/app_conditional_now",
+        "symbol": "free",
+        "symbol_version": "GLIBC_2.2.5",
+        "provider_object": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "evidence_ids": [
+          "ev-016"
+        ]
+      },
+      {
+        "pid": 447,
+        "caller_object": "/workspace/fixtures/app_conditional_now",
+        "symbol": "malloc",
+        "symbol_version": "GLIBC_2.2.5",
+        "provider_object": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "evidence_ids": [
+          "ev-017"
+        ]
+      },
+      {
+        "pid": 447,
+        "caller_object": "/workspace/fixtures/app_conditional_now",
+        "symbol": "realloc",
+        "symbol_version": "GLIBC_2.2.5",
+        "provider_object": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+        "evidence_ids": [
+          "ev-018"
+        ]
+      }
+    ]
+  },
+  "run": {
+    "attempted": true,
+    "target_exit_code": 0,
+    "timed_out": false,
+    "output_limited": false,
+    "trace_complete": true,
+    "stdout": "target: skipped\n",
+    "stderr": "       447:\tfind library=libc.so.6 [0]; searching\n       447:\t search cache=/etc/ld.so.cache\n       447:\t  trying file=/lib/x86_64-linux-gnu/libc.so.6\n       447:\t\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `_res' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `svc_max_pollfd' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `obstack_alloc_failed_handler' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__ctype_toupper' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `loc1' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_dl_argv' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__libc_single_threaded' [GLIBC_2.32]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `free' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `re_syntax_options' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `rpc_createerr' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `stdout' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__ctype32_toupper' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `opterr' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `getdate_err' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__curbrk' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `loc2' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `program_invocation_name' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__fpu_control' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `__libc_enable_secure' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `_IO_2_1_stderr_' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__rcmd_errstr' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__ctype_b' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `error_print_progname' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `stderr' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `obstack_exit_failure' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `__libc_stack_end' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__key_encryptsession_pk_LOCAL' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_rtld_global_ro' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `argp_program_version' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `svcauthdes_stats' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__check_rhosts_file' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `optind' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `_IO_2_1_stdin_' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `program_invocation_short_name' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__ctype32_tolower' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `error_message_count' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `optopt' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__ctype32_b' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `_nl_msg_cat_cntr' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__daylight' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `_nl_domain_bindings' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `argp_program_bug_address' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `_IO_funlockfile' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `svc_fdset' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__libc_dlerror_result' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `stdin' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__timezone' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__ctype_tolower' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `_IO_2_1_stdout_' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__tzname' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `error_one_per_line' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `_res_hconf' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__key_decryptsession_pk_LOCAL' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_rtld_global' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__progname' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `h_errlist' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__environ' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `argp_err_exit_status' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `svc_pollfd' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__progname_full' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `argp_program_version_hook' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `optarg' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `malloc' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `realloc' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `calloc' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_dl_find_dso_for_object' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_dl_deallocate_tls' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `__tls_get_addr' [GLIBC_2.3]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_dl_signal_error' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_dl_signal_exception' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_dl_audit_symbind_alt' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `__tunable_is_initialized' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_dl_rtld_di_serinfo' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_dl_allocate_tls' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `__tunable_get_val' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_dl_catch_exception' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_dl_allocate_tls_init' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `__nptl_change_stack_perm' [GLIBC_PRIVATE]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `_dl_audit_preinit' [GLIBC_PRIVATE]\n       447:\tbinding file /workspace/fixtures/libhook_fixed.so [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__cxa_finalize' [GLIBC_2.2.5]\n       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__libc_start_main' [GLIBC_2.34]\n       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__cxa_finalize' [GLIBC_2.2.5]\n       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `puts' [GLIBC_2.2.5]\n       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `close' [GLIBC_2.2.5]\n       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `strcmp' [GLIBC_2.2.5]\n       447:\tbinding file ./fixtures/app_conditional_now [0] to /workspace/fixtures/libhook_fixed.so [0]: normal symbol `open64' [GLIBC_2.2.5]\n       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `perror' [GLIBC_2.2.5]\n       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `calloc' [GLIBC_2.2.5]\n       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `free' [GLIBC_2.2.5]\n       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `malloc' [GLIBC_2.2.5]\n       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `realloc' [GLIBC_2.2.5]\n       447:\tbinding file /lib64/ld-linux-x86-64.so.2 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `__rseq_offset' [GLIBC_2.35]\n       447:\tbinding file /lib64/ld-linux-x86-64.so.2 [0] to /lib64/ld-linux-x86-64.so.2 [0]: normal symbol `__rseq_size' [GLIBC_2.35]\n       447:\t\n       447:\tcalling init: /lib64/ld-linux-x86-64.so.2\n       447:\t\n       447:\t\n       447:\tcalling init: /lib/x86_64-linux-gnu/libc.so.6\n       447:\t\n       447:\t\n       447:\tcalling init: /workspace/fixtures/libhook_fixed.so\n       447:\t\n       447:\t\n       447:\tinitialize program: ./fixtures/app_conditional_now\n       447:\t\n       447:\t\n       447:\ttransferring control: ./fixtures/app_conditional_now\n       447:\t\n       447:\t\n       447:\tcalling fini:  [0]\n       447:\t\n       447:\t\n       447:\tcalling fini: /workspace/fixtures/libhook_fixed.so [0]\n       447:\t\n       447:\t\n       447:\tcalling fini: /lib/x86_64-linux-gnu/libc.so.6 [0]\n       447:\t\n       447:\t\n       447:\tcalling fini: /lib64/ld-linux-x86-64.so.2 [0]\n       447:\t\n",
+    "loader_environment": {
+      "policy": "single_requested_preload",
+      "LD_PRELOAD": "/workspace/fixtures/libhook_fixed.so",
+      "LD_DEBUG": "libs,bindings",
+      "LD_LIBRARY_PATH": null,
+      "LD_BIND_NOW": null,
+      "removed": [
+        "LD_AUDIT",
+        "LD_DEBUG_OUTPUT",
+        "LD_TRACE_LOADED_OBJECTS"
+      ],
+      "overridden": [
+        "LD_PRELOAD",
+        "LD_DEBUG"
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "id": "ev-001",
+      "source": "validation",
+      "summary": "Target is a readable executable regular ELF; hook is a readable regular ELF; no known set-ID/file-capability case",
+      "raw_excerpt": ""
+    },
+    {
+      "id": "ev-002",
+      "source": "validation",
+      "summary": "Linux x86-64; glibc 2.39; GNU readelf/nm available; helper environment clears LD_* and sets LC_ALL=C",
+      "raw_excerpt": ""
+    },
+    {
+      "id": "ev-003",
+      "source": "readelf",
+      "summary": "Inspected /workspace/fixtures/app_conditional_now: DYN, ELF64, Advanced Micro Devices X86-64; PT_INTERP='/lib64/ld-linux-x86-64.so.2'; PT_DYNAMIC=True; DT_NEEDED=['libc.so.6']; eager=True",
+      "raw_excerpt": "ELF Header:\n  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 \n  Class:                             ELF64\n  Data:                              2's complement, little endian\n  Version:                           1 (current)\n  OS/ABI:                            UNIX - System V\n  ABI Version:                       0\n  Type:                              DYN (Position-Independent Executable file)\n  Machine:                           Advanced Micro Devices X86-64\n  Version:                           0x1\n  Entry point address:               0x11a0\n  Start of program headers:          64 (bytes into file)\n  Start of section headers:          14192 (bytes into file)\n  Flags:                             0x0\n  Size of this header:               64 (bytes)\n  Size of program headers:           56 (bytes)\n  Number of program headers:         13\n  Size of section headers:           64 (bytes)\n  Number of section headers:         31\n  Section header string table index: 30\n\nProgram Headers:\n  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align\n  PHDR           0x000040 0x0000000000000040 0x0000000000000040 0x0002d8 0x0002d8 R   0x8\n  INTERP         0x000318 0x0000000000000318 0x0000000000000318 0x00001c 0x00001c R   0x1\n      [Requesting program interpreter: /lib64/ld-linux-x86-64.so.2]\n  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x000708 0x000708 R   0x1000\n  LOAD           0x001000 0x0000000000001000 0x0000000000001000 0x000299 0x000299 R E 0x1000\n  LOAD           0x002000 0x0000000000002000 0x0000000000002000 0x000158 0x000158 R   0x1000\n  LOAD           0x002d98 0x0000000000003d98 0x0000000000003d98 0x000278 0x000280 RW  0x1000\n  DYNAMIC        0x002da8 0x0000000000003da8 0x0000000000003da8 0x0001f0 0x0001f0 RW  0x8\n  NOTE           0x000338 0x0000000000000338 0x0000000000000338 0x000030 0x000030 R   0x8\n  NOTE           0x000368 0x0000000000000368 0x0000000000000368 0x000044 0x000044 R   0x4\n  GNU_PROPERTY   0x000338 0x0000000000000338 0x0000000000000338 0x000030 0x000030 R   0x8\n  GNU_EH_FRAME   0x002048 0x0000000000002048 0x0000000000002048 0x00003c 0x00003c R   0x4\n  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x10\n  GNU_RELRO      0x002d98 0x0000000000003d98 0x0000000000003d98 0x000268 0x000268 R   0x1\n\n Section to Segment mapping:\n  Segment Sections...\n   00     \n   01     .interp \n   02     .interp .note.gnu.property .note.gnu.build-id .note.ABI-tag .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt \n   03     .init .plt .plt.got .plt.sec .text .fini \n   04     .rodata .eh_frame_hdr .eh_frame \n   05     .init_array .fini_array .dynamic .got .data .bss \n   06     .dynamic \n   07     .note.gnu.property \n   08     .note.gnu.build-id .note.ABI-tag \n   09     .note.gnu.property \n   10     .eh_frame_hdr \n   11     \n   12     .init_array .fini_array .dynamic .got \n\nDynamic section at offset 0x2da8 contains 27 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000000c (INIT)               0x1000\n 0x000000000000000d (FINI)               0x128c\n 0x0000000000000019 (INIT_ARRAY)         0x3d98\n 0x000000000000001b (INIT_ARRAYSZ)       8 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x3da0\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x3b0\n 0x0000000000000005 (STRTAB)             0x4e0\n 0x0000000000000006 (SYMTAB)             0x3d8\n 0x000000000000000a (STRSZ)              168 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000015 (DEBUG)              0x0\n 0x0000000000000003 (PLTGOT)             0x3f98\n 0x0000000000000002 (PLTRELSZ)           120 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0x690\n 0x0000000000000007 (RELA)               0x5d0\n 0x0000000000000008 (RELASZ)             192 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000000000001e (FLAGS)              BIND_NOW\n 0x0000"
+    },
+    {
+      "id": "ev-004",
+      "source": "readelf",
+      "summary": "Complete dynamic symbol table inspected: /workspace/fixtures/app_conditional_now; 10 named entries (raw excerpt shows requested/variant rows)",
+      "raw_excerpt": "     7: 0000000000000000     0 FUNC    GLOBAL DEFAULT  UND open64@GLIBC_2.2.5 (3)"
+    },
+    {
+      "id": "ev-005",
+      "source": "readelf",
+      "summary": "Inspected /workspace/fixtures/libhook_fixed.so: DYN, ELF64, Advanced Micro Devices X86-64; PT_INTERP=None; PT_DYNAMIC=True; DT_NEEDED=['libc.so.6']; eager=False",
+      "raw_excerpt": "ELF Header:\n  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 \n  Class:                             ELF64\n  Data:                              2's complement, little endian\n  Version:                           1 (current)\n  OS/ABI:                            UNIX - System V\n  ABI Version:                       0\n  Type:                              DYN (Shared object file)\n  Machine:                           Advanced Micro Devices X86-64\n  Version:                           0x1\n  Entry point address:               0x0\n  Start of program headers:          64 (bytes into file)\n  Start of section headers:          14048 (bytes into file)\n  Flags:                             0x0\n  Size of this header:               64 (bytes)\n  Size of program headers:           56 (bytes)\n  Number of program headers:         11\n  Size of section headers:           64 (bytes)\n  Number of section headers:         30\n  Section header string table index: 29\n\nProgram Headers:\n  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align\n  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x000678 0x000678 R   0x1000\n  LOAD           0x001000 0x0000000000001000 0x0000000000001000 0x000659 0x000659 R E 0x1000\n  LOAD           0x002000 0x0000000000002000 0x0000000000002000 0x0001dc 0x0001dc R   0x1000\n  LOAD           0x002df8 0x0000000000003df8 0x0000000000003df8 0x000238 0x000240 RW  0x1000\n  DYNAMIC        0x002e08 0x0000000000003e08 0x0000000000003e08 0x0001c0 0x0001c0 RW  0x8\n  NOTE           0x0002a8 0x00000000000002a8 0x00000000000002a8 0x000020 0x000020 R   0x8\n  NOTE           0x0002c8 0x00000000000002c8 0x00000000000002c8 0x000024 0x000024 R   0x4\n  GNU_PROPERTY   0x0002a8 0x00000000000002a8 0x00000000000002a8 0x000020 0x000020 R   0x8\n  GNU_EH_FRAME   0x0020cc 0x00000000000020cc 0x00000000000020cc 0x00003c 0x00003c R   0x4\n  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x10\n  GNU_RELRO      0x002df8 0x0000000000003df8 0x0000000000003df8 0x000208 0x000208 R   0x1\n\n Section to Segment mapping:\n  Segment Sections...\n   00     .note.gnu.property .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt \n   01     .init .plt .plt.got .plt.sec .text .fini \n   02     .rodata .eh_frame_hdr .eh_frame \n   03     .init_array .fini_array .dynamic .got .got.plt .data .bss \n   04     .dynamic \n   05     .note.gnu.property \n   06     .note.gnu.build-id \n   07     .note.gnu.property \n   08     .eh_frame_hdr \n   09     \n   10     .init_array .fini_array .dynamic .got \n\nDynamic section at offset 0x2e08 contains 24 entries:\n  Tag        Type                         Name/Value\n 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]\n 0x000000000000000c (INIT)               0x1000\n 0x000000000000000d (FINI)               0x164c\n 0x0000000000000019 (INIT_ARRAY)         0x3df8\n 0x000000000000001b (INIT_ARRAYSZ)       8 (bytes)\n 0x000000000000001a (FINI_ARRAY)         0x3e00\n 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)\n 0x000000006ffffef5 (GNU_HASH)           0x2f0\n 0x0000000000000005 (STRTAB)             0x438\n 0x0000000000000006 (SYMTAB)             0x318\n 0x000000000000000a (STRSZ)              194 (bytes)\n 0x000000000000000b (SYMENT)             24 (bytes)\n 0x0000000000000003 (PLTGOT)             0x3fe8\n 0x0000000000000002 (PLTRELSZ)           120 (bytes)\n 0x0000000000000014 (PLTREL)             RELA\n 0x0000000000000017 (JMPREL)             0x600\n 0x0000000000000007 (RELA)               0x558\n 0x0000000000000008 (RELASZ)             168 (bytes)\n 0x0000000000000009 (RELAENT)            24 (bytes)\n 0x000000006ffffffe (VERNEED)            0x518\n 0x000000006fffffff (VERNEEDNUM)         1\n 0x000000006ffffff0 (VERSYM)             0x4fa\n 0x000000006ffffff9 (RELACOUNT)          3\n 0x0000000000000000 (NULL)               0x0\n"
+    },
+    {
+      "id": "ev-006",
+      "source": "readelf",
+      "summary": "Complete dynamic symbol table inspected: /workspace/fixtures/libhook_fixed.so; 11 named entries (raw excerpt shows requested/variant rows)",
+      "raw_excerpt": "    10: 000000000000140f   573 FUNC    GLOBAL DEFAULT   14 open64"
+    },
+    {
+      "id": "ev-007",
+      "source": "nm",
+      "summary": "Complete defined export table cross-checked against binding/visibility in readelf: /workspace/fixtures/libhook_fixed.so",
+      "raw_excerpt": "00000000000011d2 T open\n000000000000140f T open64\n"
+    },
+    {
+      "id": "ev-008",
+      "source": "ld_debug",
+      "summary": "Direct target PID 447: __libc_start_main version='GLIBC_2.34' binds to /usr/lib/x86_64-linux-gnu/libc.so.6",
+      "raw_excerpt": "       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__libc_start_main' [GLIBC_2.34]"
+    },
+    {
+      "id": "ev-009",
+      "source": "ld_debug",
+      "summary": "Direct target PID 447: __cxa_finalize version='GLIBC_2.2.5' binds to /usr/lib/x86_64-linux-gnu/libc.so.6",
+      "raw_excerpt": "       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__cxa_finalize' [GLIBC_2.2.5]"
+    },
+    {
+      "id": "ev-010",
+      "source": "ld_debug",
+      "summary": "Direct target PID 447: puts version='GLIBC_2.2.5' binds to /usr/lib/x86_64-linux-gnu/libc.so.6",
+      "raw_excerpt": "       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `puts' [GLIBC_2.2.5]"
+    },
+    {
+      "id": "ev-011",
+      "source": "ld_debug",
+      "summary": "Direct target PID 447: close version='GLIBC_2.2.5' binds to /usr/lib/x86_64-linux-gnu/libc.so.6",
+      "raw_excerpt": "       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `close' [GLIBC_2.2.5]"
+    },
+    {
+      "id": "ev-012",
+      "source": "ld_debug",
+      "summary": "Direct target PID 447: strcmp version='GLIBC_2.2.5' binds to /usr/lib/x86_64-linux-gnu/libc.so.6",
+      "raw_excerpt": "       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `strcmp' [GLIBC_2.2.5]"
+    },
+    {
+      "id": "ev-013",
+      "source": "ld_debug",
+      "summary": "Direct target PID 447: open64 version='GLIBC_2.2.5' binds to /workspace/fixtures/libhook_fixed.so",
+      "raw_excerpt": "       447:\tbinding file ./fixtures/app_conditional_now [0] to /workspace/fixtures/libhook_fixed.so [0]: normal symbol `open64' [GLIBC_2.2.5]"
+    },
+    {
+      "id": "ev-014",
+      "source": "ld_debug",
+      "summary": "Direct target PID 447: perror version='GLIBC_2.2.5' binds to /usr/lib/x86_64-linux-gnu/libc.so.6",
+      "raw_excerpt": "       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `perror' [GLIBC_2.2.5]"
+    },
+    {
+      "id": "ev-015",
+      "source": "ld_debug",
+      "summary": "Direct target PID 447: calloc version='GLIBC_2.2.5' binds to /usr/lib/x86_64-linux-gnu/libc.so.6",
+      "raw_excerpt": "       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `calloc' [GLIBC_2.2.5]"
+    },
+    {
+      "id": "ev-016",
+      "source": "ld_debug",
+      "summary": "Direct target PID 447: free version='GLIBC_2.2.5' binds to /usr/lib/x86_64-linux-gnu/libc.so.6",
+      "raw_excerpt": "       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `free' [GLIBC_2.2.5]"
+    },
+    {
+      "id": "ev-017",
+      "source": "ld_debug",
+      "summary": "Direct target PID 447: malloc version='GLIBC_2.2.5' binds to /usr/lib/x86_64-linux-gnu/libc.so.6",
+      "raw_excerpt": "       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `malloc' [GLIBC_2.2.5]"
+    },
+    {
+      "id": "ev-018",
+      "source": "ld_debug",
+      "summary": "Direct target PID 447: realloc version='GLIBC_2.2.5' binds to /usr/lib/x86_64-linux-gnu/libc.so.6",
+      "raw_excerpt": "       447:\tbinding file ./fixtures/app_conditional_now [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `realloc' [GLIBC_2.2.5]"
+    },
+    {
+      "id": "ev-019",
+      "source": "ld_debug",
+      "summary": "Direct target PID initialized the requested hook object",
+      "raw_excerpt": "       447:\tcalling init: /workspace/fixtures/libhook_fixed.so"
+    },
+    {
+      "id": "ev-020",
+      "source": "ld_debug",
+      "summary": "Excluded rows: other PID/object, unresolved identity, scope or unrecognized format; no main diagnosis attribution",
+      "raw_excerpt": "       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `_res' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `svc_max_pollfd' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `obstack_alloc_failed_handler' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `__ctype_toupper' [GLIBC_2.2.5]\n       447:\tbinding file /lib/x86_64-linux-gnu/libc.so.6 [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `loc1' [GLIBC_2.2.5]"
+    }
+  ],
+  "limitations": [
+    "Loader binding does not establish function invocation or this workload's actual failure cause; invocation is UNKNOWN",
+    "Loader stderr is not authenticated telemetry; target output can share or imitate it",
+    "Secure-execution detection is incomplete; child processes and unusual loader scopes are outside this MVP"
+  ],
+  "errors": []
+}

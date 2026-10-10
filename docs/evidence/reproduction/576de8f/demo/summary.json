@@ -1,0 +1,130 @@
+{
+  "result": "PASS",
+  "elapsed_seconds": 3.34,
+  "secondary": "verified conventional static ELF (compiler support available); no-export case also passed",
+  "app_large_sha256_before": "e4d0f289e4634ec4aecf3e62082be1834fdeaae2cbcdcdc2c63d3208a9a6714d",
+  "app_large_sha256_after": "e4d0f289e4634ec4aecf3e62082be1834fdeaae2cbcdcdc2c63d3208a9a6714d",
+  "same_workload_argv": [
+    "./fixtures/app_large"
+  ],
+  "cases": [
+    {
+      "name": "normal",
+      "status": "INCONCLUSIVE",
+      "marker": "open",
+      "invocation": "UNKNOWN",
+      "diagnoses": [],
+      "facts": [
+        "BINDING_OBSERVED",
+        "EXPECTED_BINDING_OBSERVED",
+        "HOOK_EXPORTS_SYMBOL",
+        "LIBRARY_LOADED",
+        "SYMBOL_NOT_EXPORTED",
+        "TARGET_IMPORTS_SYMBOL"
+      ]
+    },
+    {
+      "name": "large",
+      "status": "INCONCLUSIVE",
+      "marker": null,
+      "invocation": "UNKNOWN",
+      "diagnoses": [
+        "SYMBOL_VARIANT_MISMATCH"
+      ],
+      "facts": [
+        "BINDING_OBSERVED",
+        "HOOK_EXPORTS_SYMBOL",
+        "LIBRARY_LOADED",
+        "SYMBOL_NOT_EXPORTED",
+        "TARGET_IMPORTS_SYMBOL"
+      ]
+    },
+    {
+      "name": "fixed",
+      "status": "INCONCLUSIVE",
+      "marker": "open64",
+      "invocation": "UNKNOWN",
+      "diagnoses": [],
+      "facts": [
+        "BINDING_OBSERVED",
+        "EXPECTED_BINDING_OBSERVED",
+        "HOOK_EXPORTS_SYMBOL",
+        "LIBRARY_LOADED",
+        "TARGET_IMPORTS_SYMBOL"
+      ]
+    },
+    {
+      "name": "eager_call",
+      "status": "INCONCLUSIVE",
+      "marker": null,
+      "invocation": "UNKNOWN",
+      "diagnoses": [
+        "SYMBOL_VARIANT_MISMATCH"
+      ],
+      "facts": [
+        "BINDING_OBSERVED",
+        "HOOK_EXPORTS_SYMBOL",
+        "LIBRARY_LOADED",
+        "SYMBOL_NOT_EXPORTED",
+        "TARGET_IMPORTS_SYMBOL"
+      ]
+    },
+    {
+      "name": "eager_skip",
+      "status": "INCONCLUSIVE",
+      "marker": null,
+      "invocation": "UNKNOWN",
+      "diagnoses": [
+        "SYMBOL_VARIANT_MISMATCH"
+      ],
+      "facts": [
+        "BINDING_OBSERVED",
+        "HOOK_EXPORTS_SYMBOL",
+        "LIBRARY_LOADED",
+        "SYMBOL_NOT_EXPORTED",
+        "TARGET_IMPORTS_SYMBOL"
+      ]
+    },
+    {
+      "name": "eager_skip_fixed",
+      "status": "INCONCLUSIVE",
+      "marker": null,
+      "invocation": "UNKNOWN",
+      "diagnoses": [],
+      "facts": [
+        "BINDING_OBSERVED",
+        "EXPECTED_BINDING_OBSERVED",
+        "HOOK_EXPORTS_SYMBOL",
+        "LIBRARY_LOADED",
+        "TARGET_IMPORTS_SYMBOL"
+      ]
+    },
+    {
+      "name": "eager_call_fixed",
+      "status": "INCONCLUSIVE",
+      "marker": "open64",
+      "invocation": "UNKNOWN",
+      "diagnoses": [],
+      "facts": [
+        "BINDING_OBSERVED",
+        "EXPECTED_BINDING_OBSERVED",
+        "HOOK_EXPORTS_SYMBOL",
+        "LIBRARY_LOADED",
+        "TARGET_IMPORTS_SYMBOL"
+      ]
+    },
+    {
+      "name": "no_export",
+      "status": "INCONCLUSIVE",
+      "marker": null,
+      "invocation": "UNKNOWN",
+      "diagnoses": [],
+      "facts": [
+        "BINDING_OBSERVED",
+        "LIBRARY_LOADED",
+        "SYMBOL_NOT_EXPORTED",
+        "TARGET_IMPORTS_SYMBOL"
+      ]
+    }
+  ]
+}

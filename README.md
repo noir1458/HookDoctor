@@ -65,6 +65,12 @@ Docker Desktop 설정을 자동으로 변경하거나 privileged 컨테이너를
 검증 결과와 지원 한계는 [docs/EVIDENCE.md](docs/EVIDENCE.md), 자료는
 [docs/SOURCES.md](docs/SOURCES.md)에 기록합니다.
 
+기능 동결 커밋 `576de8f`를 빌드 산출물 없는 별도 체크아웃에서 재검증했습니다.
+전체 40개 테스트 통과, 데모 3.340초이며
+[재현 기록](docs/evidence/reproduction/576de8f/metadata.json)에 실제 환경과 명령을 남겼습니다.
+Docker 이미지 빌드는 기존 레이어 캐시를 사용했습니다. 네이티브 Intel/AMD Linux
+교차 검증은 아직 수행하지 않았습니다.
+
 ## CLI 사용
 
 ```bash

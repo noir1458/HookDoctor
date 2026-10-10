@@ -1,0 +1,64 @@
+test_dynamic_elf_and_symbols (test_fixtures.FixtureGate.test_dynamic_elf_and_symbols) ... ok
+test_static_or_no_export_secondary (test_fixtures.FixtureGate.test_static_or_no_export_secondary) ... ok
+test_workloads_twice_and_eager_binding (test_fixtures.FixtureGate.test_workloads_twice_and_eager_binding) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.367s
+
+OK
+test_acceptance_matrix (test_cli.CLIIntegrationTests.test_acceptance_matrix) ... ok
+test_collector_output_limit_is_not_target_failure (test_cli.CLIIntegrationTests.test_collector_output_limit_is_not_target_failure) ... ok
+test_human_output_facts_uncertainty_and_next_check (test_cli.CLIIntegrationTests.test_human_output_facts_uncertainty_and_next_check) ... ok
+test_invalid_inputs_one_json_no_run (test_cli.CLIIntegrationTests.test_invalid_inputs_one_json_no_run) ... ok
+test_nonexecutable_hook_spaces_literal_argv_and_parent_environment (test_cli.CLIIntegrationTests.test_nonexecutable_hook_spaces_literal_argv_and_parent_environment) ... ok
+test_nonzero_signal_and_non_utf8_target (test_cli.CLIIntegrationTests.test_nonzero_signal_and_non_utf8_target) ... ok
+test_real_collector_failure_timeout_and_output_json (test_cli.CLIIntegrationTests.test_real_collector_failure_timeout_and_output_json) ... ok
+test_real_static (test_cli.CLIIntegrationTests.test_real_static) ... ok
+test_timeout_flood_and_child_pipe_json (test_cli.CLIIntegrationTests.test_timeout_flood_and_child_pipe_json) ... ok
+test_help_and_version (test_cli.ParsingTests.test_help_and_version) ... ok
+test_invalid_options_launch_nothing (test_cli.ParsingTests.test_invalid_options_launch_nothing) ... ok
+test_each_missing_condition_withholds_diagnosis (test_diagnosis.DiagnosisTests.test_each_missing_condition_withholds_diagnosis) ... ok
+test_eager_binding_never_changes_invocation (test_diagnosis.DiagnosisTests.test_eager_binding_never_changes_invocation) ... ok
+test_exact_conditional_rule_and_references (test_diagnosis.DiagnosisTests.test_exact_conditional_rule_and_references) ... ok
+test_expected_binding_is_fact_with_unknown_invocation (test_diagnosis.DiagnosisTests.test_expected_binding_is_fact_with_unknown_invocation) ... ok
+test_missing_exports_are_facts_without_runtime (test_diagnosis.DiagnosisTests.test_missing_exports_are_facts_without_runtime) ... ok
+test_no_inferred_suffix_families (test_diagnosis.DiagnosisTests.test_no_inferred_suffix_families) ... ok
+test_dynamic_elf_and_symbols (test_fixtures.FixtureGate.test_dynamic_elf_and_symbols) ... ok
+test_static_or_no_export_secondary (test_fixtures.FixtureGate.test_static_or_no_export_secondary) ... ok
+test_workloads_twice_and_eager_binding (test_fixtures.FixtureGate.test_workloads_twice_and_eager_binding) ... ok
+test_analyzer_errors_have_schema_and_no_target (test_inspector.InspectorIntegrationTests.test_analyzer_errors_have_schema_and_no_target) ... ok
+test_architecture_mismatch_rejected (test_inspector.InspectorIntegrationTests.test_architecture_mismatch_rejected) ... ok
+test_dynamic_exec_and_static_pie (test_inspector.InspectorIntegrationTests.test_dynamic_exec_and_static_pie) ... ok
+test_setid_hook_separator_and_permissions (test_inspector.InspectorIntegrationTests.test_setid_hook_separator_and_permissions) ... ok
+test_collector_environment_removes_all_loader_settings (test_inspector.ParserTests.test_collector_environment_removes_all_loader_settings) ... ok
+test_collector_failed_timeout_limit_flags (test_inspector.ParserTests.test_collector_failed_timeout_limit_flags) ... ok
+test_missing_table_and_truncation_are_not_absence (test_inspector.ParserTests.test_missing_table_and_truncation_are_not_absence) ... ok
+test_static_build_failure_is_skipped_with_reason (test_inspector.ParserTests.test_static_build_failure_is_skipped_with_reason) ... ok
+test_static_requires_all_properties (test_inspector.ParserTests.test_static_requires_all_properties) ... ok
+test_versions_and_visibility (test_inspector.ParserTests.test_versions_and_visibility) ... ok
+test_canonical_alias_and_libc_identity (test_tracer.AttributionTests.test_canonical_alias_and_libc_identity) ... ok
+test_child_ambiguous_and_unknown_rows_are_excluded (test_tracer.AttributionTests.test_child_ambiguous_and_unknown_rows_are_excluded) ... ok
+test_launch_failure_preserves_attempted_and_policy (test_tracer.AttributionTests.test_launch_failure_preserves_attempted_and_policy) ... ok
+test_loader_policy_and_parent_unchanged (test_tracer.AttributionTests.test_loader_policy_and_parent_unchanged) ... ok
+test_no_load_without_positive_event (test_tracer.AttributionTests.test_no_load_without_positive_event) ... ok
+test_target_binding_and_forwarding_distinguished (test_tracer.AttributionTests.test_target_binding_and_forwarding_distinguished) ... ok
+test_child_pipe_timeout_and_owned_group_cleanup (test_tracer.BoundedRunnerTests.test_child_pipe_timeout_and_owned_group_cleanup) ... ok
+test_combined_output_cap_and_exact_boundary (test_tracer.BoundedRunnerTests.test_combined_output_cap_and_exact_boundary) ... ok
+test_interruption_cleans_owned_group (test_tracer.BoundedRunnerTests.test_interruption_cleans_owned_group) ... ok
+test_term_ignoring_target_is_killed (test_tracer.BoundedRunnerTests.test_term_ignoring_target_is_killed) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 20.524s
+
+OK
+PASS normal: INCONCLUSIVE; harness marker=open; CLI invocation=UNKNOWN
+PASS large: INCONCLUSIVE; harness marker=None; CLI invocation=UNKNOWN
+PASS fixed: INCONCLUSIVE; harness marker=open64; CLI invocation=UNKNOWN
+PASS eager_call: INCONCLUSIVE; harness marker=None; CLI invocation=UNKNOWN
+PASS eager_skip: INCONCLUSIVE; harness marker=None; CLI invocation=UNKNOWN
+PASS eager_skip_fixed: INCONCLUSIVE; harness marker=None; CLI invocation=UNKNOWN
+PASS eager_call_fixed: INCONCLUSIVE; harness marker=open64; CLI invocation=UNKNOWN
+PASS no_export: INCONCLUSIVE; harness marker=None; CLI invocation=UNKNOWN
+PASS static: NOT_APPLICABLE; target not run
+PASS unchanged app_large SHA-256: e4d0f289e4634ec4aecf3e62082be1834fdeaae2cbcdcdc2c63d3208a9a6714d
+PASS demo completed in 3.340s. verified conventional static ELF (compiler support available); no-export case also passed

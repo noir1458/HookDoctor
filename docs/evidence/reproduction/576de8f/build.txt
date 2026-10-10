@@ -1,0 +1,31 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 408B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:24.04
+#2 DONE 1.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 55B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55
+#4 resolve docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55 done
+#4 DONE 0.0s
+
+#5 [2/3] RUN test "amd64" = amd64     && apt-get update     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends        build-essential binutils python3 ca-certificates     && rm -rf /var/lib/apt/lists/*
+#5 CACHED
+
+#6 [3/3] WORKDIR /workspace
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 exporting manifest sha256:5271837752577459dbe47fc6b093e618a4983546481f5c379907b366269cfe90 done
+#7 exporting config sha256:35c8515ea64b924947f44805e47d7e101c51faeaa35de98057d244e9a0319757 done
+#7 exporting attestation manifest sha256:a923b773fe9d692bea11ed0e6c456583144db2f4051c0655561974a917679fcc done
+#7 exporting manifest list sha256:727fd268e984fe05563b502829901cc502a06ecd19c1862cee376c7e0f30fe00 done
+#7 naming to docker.io/library/hookdoctor-dev:ubuntu24.04-amd64 done
+#7 DONE 0.0s

@@ -1,0 +1,8 @@
+test_dynamic_elf_and_symbols (test_fixtures.FixtureGate.test_dynamic_elf_and_symbols) ... ok
+test_static_or_no_export_secondary (test_fixtures.FixtureGate.test_static_or_no_export_secondary) ... ok
+test_workloads_twice_and_eager_binding (test_fixtures.FixtureGate.test_workloads_twice_and_eager_binding) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.367s
+
+OK

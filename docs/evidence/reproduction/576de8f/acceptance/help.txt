@@ -1,0 +1,11 @@
+usage: hookdoc [-h] [--version] {check} ...
+
+Correlate ELF symbols and glibc loader binding; invocation remains UNKNOWN.
+
+positional arguments:
+  {check}
+    check     execute one bounded target workload
+
+options:
+  -h, --help  show this help message and exit
+  --version   show program's version number and exit
